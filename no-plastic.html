@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avoided Plastic Use</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌱 Avoided Plastic Use</h1>
+        <p>Congratulations! You are reducing plastic waste and helping the environment. 🌍</p>
+    </header>
+
+    <main class="activity-page">
+        <img src="plastic1.jpg" alt="No Plastic" class="activity-image">
+
+        <!-- Section 1: Why is Eliminating Plastic Necessary? -->
+        <section class="info-box">
+            <h2>🚯 Why is Eliminating Plastic Necessary?</h2>
+            <p>Plastic pollution is increasing rapidly, damaging the environment and our health. It takes hundreds of years to decompose, creating long-term harm to nature. Reducing plastic use helps in preserving our planet for future generations.</p>
+        </section>
+
+        <!-- Section 2: What Are the Harms of Plastic? -->
+        <section class="info-box">
+            <h2>⚠️ What Are the Harms of Plastic?</h2>
+            <ul>
+                <li>🐠 **Harms Marine Life:** Fish, turtles, and seabirds mistake plastic for food, leading to choking or death.</li>
+                <li>🌍 **Pollutes Land & Water:** Plastic waste clogs rivers, oceans, and drains, making the environment toxic.</li>
+                <li>☠️ **Releases Harmful Chemicals:** Burning plastic pollutes the air with toxic fumes, affecting human health.</li>
+                <li>⏳ **Takes Centuries to Decompose:** A single plastic bag can take 500+ years to break down.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: How to Reduce Plastic Use? -->
+        <section class="tips-box">
+            <h2>♻ How to Reduce Plastic Use?</h2>
+            <ul>
+                <li>👜 Carry **cloth bags** instead of plastic bags for shopping.</li>
+                <li>🥤 Use a **reusable water bottle** instead of buying plastic ones.</li>
+                <li>🍴 Replace **plastic cutlery** with steel or wooden alternatives.</li>
+                <li>🛍 Buy **products with minimal plastic packaging**.</li>
+                <li>🌱 Encourage **recycling** and proper waste management.</li>
+            </ul>
+        </section>
+
+        <!-- Section 4: Eco-Friendly Alternatives -->
+        <section class="tips-box">
+            <h2>🌿 Eco-Friendly Alternatives</h2>
+            <ul>
+                <li>♻ **Bamboo toothbrushes** instead of plastic ones.</li>
+                <li>🛍 **Jute or cloth bags** for shopping.</li>
+                <li>🍽 **Biodegradable plates & cups** for parties.</li>
+                <li>🧴 **Glass or metal containers** for storage.</li>
+            </ul>
+        </section>
+
+        <!-- Section 5: Share Your Efforts -->
+        <section class="share-box">
+            <h2>💬 Share Your Efforts</h2>
+            <p>Tell us how you avoided plastic today!</p>
+            <textarea id="userStory" placeholder="I used a steel water bottle instead of plastic..."></textarea>
+            <button onclick="saveStory()">📩 Submit</button>
+            <p id="confirmationMessage"></p>
+        </section>
+
+        <button onclick="goBack()">🔙 Back to Home</button>
+    </main>
+
+    <script>
+        function goBack() {
+            window.location.href = "index.html";
+        }
+
+        function saveStory() {
+            const story = document.getElementById("userStory").value;
+            if (story.trim() !== "") {
+                localStorage.setItem("plasticStory", story);
+                document.getElementById("confirmationMessage").innerText = "✅ Your story has been saved!";
+                document.getElementById("userStory").value = "";
+            } else {
+                document.getElementById("confirmationMessage").innerText = "⚠ Please write something before submitting!";
+            }
+        }
+    </script>
+</body>
+</html>

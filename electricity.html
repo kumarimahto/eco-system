@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Electricity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💡 Saved Electricity</h1>
+        <p>Every small effort counts! Save electricity and make a difference.</p>
+    </header>
+
+    <!-- Images Section -->
+    <section class="images">
+        <img src="save1.jpeg" alt="Saving Electricity">
+        <img src="save2.jpeg" alt="Eco Friendly">
+        <img src="save3.jpeg" alt="Energy Conservation">
+    </section>
+
+    <section class="saved-electricity">
+        <div class="electricity-info">
+            <div class="info-box">
+                <h3>⚡ Why is Saving Electricity Important?</h3>
+                <p>Electricity is a valuable resource that powers our daily lives. Conserving electricity not only helps reduce energy bills but also protects the environment. When we use less electricity, we rely less on power plants, which often burn fossil fuels. This leads to lower carbon emissions, reducing pollution and the impact of climate change.</p>
+                <p>By saving electricity, we also ensure that future generations have access to clean and sustainable energy. It promotes energy efficiency, which means getting the same amount of work done with less power, making our world a better place to live.</p>
+            </div>
+            
+            <div class="info-box">
+                <h3>🚨 What Happens If We Waste Electricity?</h3>
+                <p>Wasting electricity has serious consequences, both financially and environmentally. When we leave lights on unnecessarily or use energy inefficiently, it leads to higher electricity bills. Moreover, excessive energy consumption increases the demand for fossil fuels, which contributes to global warming.</p>
+                <p>Additionally, overuse of electricity can lead to power shortages and blackouts, especially in areas with limited energy resources. It also accelerates the depletion of natural resources like coal and gas, making it difficult for future generations to meet their energy needs.</p>
+            </div>
+        </div>
+
+        <!-- Like and Dislike Buttons -->
+        <div class="like-container">
+            <button id="like-btn">❤️ Like <span id="like-count">0</span></button>
+            <button id="dislike-btn">👎 Dislike <span id="dislike-count">0</span></button>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="back-home">
+            <button onclick="goBackHome()">⬅️ Back to Home</button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let likeCount = localStorage.getItem("electricityLikes") || 0;
+            let dislikeCount = localStorage.getItem("electricityDislikes") || 0;
+            document.getElementById("like-count").innerText = likeCount;
+            document.getElementById("dislike-count").innerText = dislikeCount;
+
+            document.getElementById("like-btn").addEventListener("click", function () {
+                likeCount++;
+                document.getElementById("like-count").innerText = likeCount;
+                localStorage.setItem("electricityLikes", likeCount);
+            });
+
+            document.getElementById("dislike-btn").addEventListener("click", function () {
+                dislikeCount++;
+                document.getElementById("dislike-count").innerText = dislikeCount;
+                localStorage.setItem("electricityDislikes", dislikeCount);
+            });
+        });
+
+        function goBackHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
